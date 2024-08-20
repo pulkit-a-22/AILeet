@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "AILeet",
+  "version": "1.0",
+  "description": "Helps users solve LeetCode problems with AI hints and code fixes.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://leetcode.com/problems/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
